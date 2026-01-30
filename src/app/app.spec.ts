@@ -232,9 +232,7 @@ describe('App', () => {
       const fixture = TestBed.createComponent(App);
       const app = fixture.componentInstance;
       
-      const mockEvent = {
-        preventDefault: vi.fn()
-      } as unknown as DragEvent;
+      const mockEvent = jasmine.createSpyObj('DragEvent', ['preventDefault']);
       
       app.allowDrop(mockEvent);
       
